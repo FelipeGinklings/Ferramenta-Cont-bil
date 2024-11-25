@@ -44,7 +44,6 @@ class Conciliation:
             self._data_frame["Complemento"]
         )
 
-        # Salva o estado do data_frame após a linha 33
         self._initial_data_frame = self._data_frame.copy()
 
         # Calcula o valor assinado com base no campo "Hist"
