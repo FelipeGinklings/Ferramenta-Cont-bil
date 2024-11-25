@@ -1,0 +1,6 @@
+result/*
+csv/*
+/*/__pycache__/*
+.vscode
+.venv
+teste.*
