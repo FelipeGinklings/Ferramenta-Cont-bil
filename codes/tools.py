@@ -3,7 +3,7 @@ import numpy as np
 from typing import List
 import os
 import errno
-import os.path  # Adicione esta importação
+import os.path
 
 
 class Conciliation:
