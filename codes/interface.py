@@ -20,7 +20,7 @@ class Interface:
         self._ensure_result_folder()
         self._root.title("Retro Reconciliation Interface")
         self._root.geometry("480x400")  # Ajuste a largura da tela
-        self._root.configure(bg=self._bg_color)  # Dark background for retro style
+        self._root.configure(bg=self._bg_color)  # Background escuro para estilo retro
         self._root.resizable(False, True)  # Trava a largura da janela
         self._create_widgets()
 
@@ -40,7 +40,7 @@ class Interface:
         separator.pack(fill="x")
 
     def _action_new(self):
-        # Filter to show only .csv
+        # Filtrar para mostrar somente .csv
         files = filedialog.askopenfilenames(
             title="Selecione um arquivo CSV",
             filetypes=(("Arquivos CSV", "*.csv"), ("Todos os Arquivos", "*.*")),
@@ -52,7 +52,7 @@ class Interface:
         about_window = tk.Toplevel(self._root)
         about_window.title("About")
         about_window.geometry("400x250")
-        about_window.configure(bg=self._bg_color)  # Dark background for retro style
+        about_window.configure(bg=self._bg_color)  # Background escuro para estilo retro
 
         text = (
             "This program performs financial data reconciliation, "
@@ -61,7 +61,7 @@ class Interface:
             "\nNew: to start a new reconciliation. "
         )
 
-        # Explanatory text with retro style
+        # Texto explicativo com estilo retro
         text_widget = tk.Text(
             about_window,
             bg=self._label_bg_color,
@@ -94,7 +94,7 @@ class Interface:
         close_button.pack(pady=12)
 
     def _create_top_frame(self):
-        top_frame = tk.Frame(self._root, bg=self._top_frame_color)  # Uniform color line
+        top_frame = tk.Frame(self._root, bg=self._top_frame_color)
         top_frame.pack(fill="x")
 
         # "New" button
@@ -111,7 +111,7 @@ class Interface:
         )
         self.new_button.grid(row=0, column=2, pady=0)
 
-        # Black bar between "New" and "Folder"
+        # Barra preta entre "New" e "Folder"
         black_bar2 = tk.Frame(top_frame, bg=self._bar_color, width=2, height=30)
         black_bar2.grid(row=0, column=3, pady=0)
 
@@ -129,7 +129,7 @@ class Interface:
         )
         self.folder_button.grid(row=0, column=4, pady=0)
 
-        # Black bar between "Folder" and "About"
+        # Barra preta entre "Folder" e "About"
         black_bar3 = tk.Frame(top_frame, bg=self._bar_color, width=2, height=30)
         black_bar3.grid(row=0, column=5, pady=0)
 
@@ -147,10 +147,6 @@ class Interface:
         )
         self.about_button.grid(row=0, column=6, pady=0)
 
-        # Black bar at the end of "About"
-        black_bar4 = tk.Frame(top_frame, bg=self._bar_color, width=2, height=30)
-        black_bar4.grid(row=0, column=7, pady=0)
-
     def _create_files_frame(self):
         form_frame = tk.Frame(self._root, bg=self._bg_color)
         form_frame.pack(fill="both", expand=True, padx=10, pady=10)
@@ -162,7 +158,7 @@ class Interface:
         for widget in self._folder_view.winfo_children():
             widget.destroy()
         for idx, item in enumerate(os.listdir(self._output_folder)):
-            if item.endswith(".xlsx"):  # Filter to show only .xlsx files
+            if item.endswith(".xlsx"):  # Filtrar para mostrar somente .xlsx 
                 item_name = os.path.splitext(item)[0]
                 row = idx
 
